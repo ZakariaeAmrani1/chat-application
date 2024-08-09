@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/signstyle.css" />
+    <link rel="stylesheet" href="/static/tailwindcss-colors.css" />
+    <link rel="icon" type="image/png" href="/static/uploads/chatapplogo1.png" />
+    <title>Instant Messaging - Sign-In</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Sign-Up</h2>
+      <form
+        action="/sign"
+        method="post"
+        enctype="multipart/form-data"
+        autocomplete="off"
+      >
+        <div class="input-profile editprofileimage">
+          <img
+            src="/static/uploads/profile.png"
+            id="profileImagelabel"
+            alt=""
+          />
+          <label
+            for="profileImage"
+            class="conversation-form-button conversation-form-submit"
+            ><i class="ri-refresh-line"></i
+          ></label>
+          <input
+            type="file"
+            id="profileImage"
+            name="profileImage"
+            accept="image/*"
+          />
+        </div>
+        <div class="block1">
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Enter your NickName"
+              name="nickname"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Enter your Password"
+              name="password"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="block1">
+          <div class="input-box">
+            <input
+              type="number"
+              placeholder="Enter your phone number"
+              name="phonenumber"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="test"
+              name="status"
+              placeholder="Enter a statut or description (optional)"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="block1 profilegender">
+          <label>Gender :</label>
+          <div>
+            <i class="ri-men-fill"></i> Male
+            <input type="radio" name="gender" value="M" required />
+          </div>
+          <div>
+            <i class="ri-women-fill"></i> Female
+            <input type="radio" name="gender" value="F" required />
+          </div>
+        </div>
+        <div class="policy checkbox">
+          <input type="checkbox" required />
+          <h3>I accept all terms & condition</h3>
+        </div>
+        <div class="input-box button">
+          <input type="Submit" value="Register Now" />
+        </div>
+        <div class="text">
+          <h3>Already have an account? <a href="/">Login now</a></h3>
+        </div>
+      </form>
+    </div>
+  </body>
+  {% if usererror1 == 'error'%}
+  <script>
+    alert(
+      "Username alredy exist try an other username or Sign-In with your username and password !!"
+    );
+  </script>
+  {%end%}
+</html>
+<script src="/static/signcript.js"></script>
